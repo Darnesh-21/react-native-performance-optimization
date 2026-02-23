@@ -12,7 +12,7 @@ import { FlatList, View, Text, StyleSheet } from 'react-native';
  * ============================================
  */
 
-// ❌ POOR: Inline item component causes re-renders
+// Inline item component causes re-renders
 const PoorListRendering = ({ items, onItemPress }) => {
   return (
     <FlatList
@@ -29,7 +29,7 @@ const PoorListRendering = ({ items, onItemPress }) => {
   );
 };
 
-// ✅ GOOD: Proper memoization and optimization
+// Proper memoization and optimization
 const GoodListRendering = ({ items, onItemPress }) => {
   // Memoized item component
   const ListItemComponent = React.memo(({ item }) => (
@@ -66,7 +66,7 @@ const GoodListRendering = ({ items, onItemPress }) => {
  * ============================================
  */
 
-// ❌ POOR: Excessive state updates cause re-renders
+// Excessive state updates cause re-renders
 const PoorStateManagement = () => {
   const [data, setData] = useState([]);
   const [selectedIds, setSelectedIds] = useState([]);
@@ -93,7 +93,7 @@ const PoorStateManagement = () => {
   );
 };
 
-// ✅ GOOD: Separate concerns with custom hooks
+// Separate concerns with custom hooks
 const useListSelection = () => {
   const [selectedIds, setSelectedIds] = useState([]);
 
@@ -130,7 +130,7 @@ const GoodStateManagement = () => {
  * ============================================
  */
 
-// ❌ POOR: Recalculates on every render
+// Recalculates on every render
 const PoorComputation = ({ items, searchQuery }) => {
   // Filtered list recalculated every render
   const filteredItems = items.filter((item) =>
@@ -151,7 +151,7 @@ const PoorComputation = ({ items, searchQuery }) => {
   );
 };
 
-// ✅ GOOD: Memoized computed values
+// Memoized computed values
 const GoodComputation = ({ items, searchQuery }) => {
   // Only recalculates when dependencies change
   const filteredItems = useMemo(() => {
@@ -183,7 +183,7 @@ const GoodComputation = ({ items, searchQuery }) => {
  * ============================================
  */
 
-// ❌ POOR: New function created every render
+// New function created every render
 const ItemListPoor = ({ items }) => {
   const handlePress = (id) => {
     // This function is redefined on every render
@@ -200,7 +200,7 @@ const ItemListPoor = ({ items }) => {
   return <FlatList data={items} renderItem={({ item }) => <ListItem item={item} />} />;
 };
 
-// ✅ GOOD: Stable function reference
+// Stable function reference
 const ItemListGood = ({ items }) => {
   const handlePress = useCallback((id) => {
     // Function reference stays same across renders
@@ -229,7 +229,7 @@ const ItemListGood = ({ items }) => {
 
 const { NativeModules } = require('react-native');
 
-// ❌ POOR: Multiple sequential Bridge calls
+// Multiple sequential Bridge calls
 const fetchDataPoor = async () => {
   try {
     // Call 1: Get user
@@ -250,7 +250,7 @@ const fetchDataPoor = async () => {
   }
 };
 
-// ✅ GOOD: Batched Bridge call
+// Batched Bridge call
 const fetchDataGood = async () => {
   try {
     // Single Bridge call - all operations done on native side
