@@ -19,7 +19,7 @@ const { CameraModule } = NativeModules;
 
 /**
  * Poor Performance Example: Multiple Sequential Bridge Calls
- * ❌ DON'T: This causes repeated Bridge crosses
+ * This causes repeated Bridge crosses
  */
 const poorBridgeCommunication = async () => {
   try {
@@ -45,7 +45,7 @@ const poorBridgeCommunication = async () => {
 
 /**
  * Good Performance Example: Batched Bridge Calls
- * ✅ DO: Batch operations into single Bridge call
+ * Batch operations into single Bridge call
  */
 const goodBridgeCommunication = async () => {
   try {
@@ -178,7 +178,7 @@ const useCameraEvents = () => {
  */
 
 /**
- * ❌ DON'T: Send large image buffer across Bridge repeatedly
+ *DON'T: Send large image buffer across Bridge repeatedly
  */
 const procesImagePoorly = async (imageBuffer) => {
   // Large data copy across Bridge = slow
