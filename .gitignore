@@ -1,0 +1,41 @@
+# node_modules (dependency folder - never commit)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# React Native specific
+.gradle/
+android/app/debug/
+android/app/release/
+ios/Pods/
+ios/Podfile.lock
+*.jsbundle
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.env
+.env.local
+
+# Build/Output directories
+build/
+dist/
+coverage/
+
+# Logs
+logs/
+*.log
+
+# Cache
+.cache/
+*.cache
+.eslintcache
+
+# Temporary files
+tmp/
+temp/
+*.tmp

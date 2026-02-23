@@ -1,0 +1,34 @@
+{
+  "name": "react-native-performance-optimization",
+  "version": "1.0.0",
+  "description": "Comprehensive guide to preventing re-renders in large flat lists and understanding React Native Bridge",
+  "main": "OptimizedFlatList.js",
+  "scripts": {
+    "test": "npm test",
+    "lint": "eslint .",
+    "start": "react-native start"
+  },
+  "keywords": [
+    "react-native",
+    "performance",
+    "optimization",
+    "flatlist",
+    "bridge",
+    "memoization",
+    "re-renders"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-native": "^0.71.0"
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^3.0.0",
+    "eslint": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/react-native-performance-optimization.git"
+  }
+}
